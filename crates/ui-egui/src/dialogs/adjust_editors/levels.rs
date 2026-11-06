@@ -60,6 +60,8 @@ pub(super) fn nearest(xs: &[f32], x: f32) -> Option<u8> {
     xs.iter().enumerate().min_by(|a, b| (a.1 - x).abs().total_cmp(&(b.1 - x).abs())).map(|(i, _)| i as u8)
 }
 
+/// The Levels editor (dialog and Properties panel): channel picker, Auto, histogram and the
+/// input and output sliders, editing the adjustment params in `v`; returns what changed this frame.
 pub(super) fn levels(ui: &mut egui::Ui, v: &mut Value, cx: &EditorCx) -> Edit {
     let t = Tokens::get(ui.ctx());
     let space = space_of(v);

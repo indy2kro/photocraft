@@ -328,6 +328,8 @@ fn curves_mode_row(ui: &mut egui::Ui, v: &mut Value, key: &str, cx: &EditorCx) -
     e
 }
 
+/// The Curves editor (dialog and Properties panel): channel picker, curve graph and its
+/// controls, editing the adjustment params in `v`; returns what changed this frame.
 pub(super) fn curves(ui: &mut egui::Ui, v: &mut Value, cx: &EditorCx) -> Edit {
     let t = Tokens::get(ui.ctx());
     let space = space_of(v);
